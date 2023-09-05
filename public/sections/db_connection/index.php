@@ -1,14 +1,7 @@
-<?php include_once '../../../private/initialize.php' ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
+<?php include_once '../../../private/initialize.php'; 
+      include(SHARED_PATH . '/public_header.php'); 
+      include(SHARED_PATH . '/public_backlink.php');
 
-<div class="card">
-        <h2 class="card-title">db_connection</h2>
-        <div class="card-body prose">
-         <?php
-        $parsedown = new Parsedown();
-        echo $parsedown->text(file_get_contents('notes/db_create.md'));
-        ?>
-        </div>
-</div>
+foreach(get_section_notes() as $note) {render_lesson_card($note);} 
 
-<?php include(SHARED_PATH . '/public_footer.php'); ?>
+     include(SHARED_PATH . '/public_footer.php'); ?>
