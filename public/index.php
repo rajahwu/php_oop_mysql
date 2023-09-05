@@ -2,6 +2,7 @@
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
 <div>
+    
     <div class="menu text-center">
         <h1 class="text-lg">php opp mysql training</h1>
         <a class="btn" href="../sites/chain_gang/public/">project</a>
