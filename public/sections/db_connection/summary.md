@@ -117,7 +117,8 @@ $database = db_connect()
 // connect to database
 function db_connect() {
     $connection = new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-    // var_dump($connection);
+    
+    // check if connection is successful
     confirm_db_connect($connection);
     return $connection;
 }

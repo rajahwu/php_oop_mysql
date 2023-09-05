@@ -37,4 +37,6 @@ $result->free();
 // mysqli_num_rows($result)
 $result->num_rows;
 
+// mysqli_close($db)
+$db->close();
 ```

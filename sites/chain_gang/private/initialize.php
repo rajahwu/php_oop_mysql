@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 
   ob_start(); // turn on output buffering
 
@@ -24,6 +27,9 @@
   define("WWW_ROOT", $doc_root);
 
   require_once('functions.php');
+  require_once('status_error_functions.php');
+  require_once('db_credentials.php');
+  require_once('database_functions.php');
 
   // Load class definitions manually
 
@@ -38,9 +44,11 @@
   // Autoload class definitions
   function my_autoload($class) {
     if(preg_match('/\A\w+\Z/', $class)) {
-      include('classes/' . $class . '.class.php');
+      include('classes/' . strtolower($class) . '.class.php');
     }
   }
   spl_autoload_register('my_autoload');
 
+  $database = db_connect();
+  Bicycle::set_database($database);
 ?>
